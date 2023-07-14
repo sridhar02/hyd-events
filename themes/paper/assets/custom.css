@@ -1,1 +1,9 @@
 /* Place custom css here. */
+
+.event{
+    margin-top:1em;
+}
+
+.event p {
+ margin:0;
+}
