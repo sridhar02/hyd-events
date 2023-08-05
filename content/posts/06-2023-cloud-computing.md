@@ -1,6 +1,8 @@
 ---
 title: "Hackathon - Hack for Hyderabad"
 date: 2023-07-15T22:04:41+05:30
+link: https://www.meetup.com/swechafsmi/events/294163891/
+
 ---
 
 

@@ -2,6 +2,8 @@
 slug: digital-arts-workshop-Learn-Krita-and-Excalidraw
 title: "Digital Arts Workshop : Learn Krita and Excalidraw"
 date: 2023-07-15T22:06:43+05:30
+link: https://www.meetup.com/swechafsmi/events/294163891/
+
 ---
 
 [Register](https://www.meetup.com/swechafsmi/events/294012089/)
