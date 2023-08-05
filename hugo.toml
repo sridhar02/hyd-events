@@ -7,6 +7,9 @@ paginate = 10
 [params]
   # color style
   color = 'linen'                           # linen, wheat, gray, light
+  formAPI='http://localhost:8080/http://localhost:9000/api/subscribers'
+  googleAnalytics = "G-XXXXXXXX"
+
 
 
   # misc

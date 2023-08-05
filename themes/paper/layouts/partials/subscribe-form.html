@@ -1,0 +1,81 @@
+<div style="color: white; min-height: 20vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 40px;">
+    <div style="height: 160px; display: flex; flex-direction: column; justify-content: center;">
+        <h1 style="font-size: 32px; margin-bottom: 16px; padding: 16px;">Subscribe to HYD-Events</h1>
+        <p style="font-size: 18px; margin-bottom: 24px; text-align: center;">Stay up-to-date with the latest events in Hyderabad.</p>
+
+        <form id="subscribe-form" style="width: 100%; max-width: 750px;">
+            <input type="email" id="email-input" placeholder="Your email" required style="width: 100%; padding: 16px; margin-bottom: 16px; background-color: white; color: black;">
+            <button type="submit" style="width: 100%; padding: 8px; background-color: black; border: 2px solid white; color: white;">Subscribe</button>
+        </form>
+
+        <div id="message" style="margin-top: 16px;"></div>
+    </div>
+</div>
+
+
+
+
+<script>
+document.getElementById('subscribe-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    const emailInput = document.getElementById('email-input');
+    const messageDiv = document.getElementById('message');
+
+    // Replace with your actual API endpoint
+    const apiEndpoint = ""
+
+    fetch(apiEndpoint, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            "x-requested-with":"XMLHttpRequest"
+        },
+        body: JSON.stringify({
+            "email": emailInput.value,
+            "name":"The Subscriber",
+            "status": "enabled",
+            "lists": [
+                2
+            ],
+            "preconfirm_subscriptions": true,
+            "attribs": {
+                "city": "string",
+                "projects": 0,
+                "stack": {
+                "languages": [
+                    "string"
+                ]
+                }
+            }
+        })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw response;
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data)
+        if (data?.length > 0) {
+            messageDiv.textContent = 'Successfully subscribed!';
+                    emailInput.value = '';
+        } else {
+            messageDiv.textContent = 'An error occurred. Please try again.';
+            emailInput.value = '';
+        }
+    })
+    .catch(error => {
+        if (error.status === 409) {
+            document.getElementById('message').innerText = 'You are already subscribed!';
+            messageDiv.textContent = 'You are already subscribed!';
+            emailInput.value = '';
+        } else {
+            console.error('Error:', error);
+            messageDiv.textContent = 'An error occurred. Please try again.';
+            emailInput.value = '';
+        }
+    });
+});
+</script>

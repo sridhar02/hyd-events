@@ -45,7 +45,7 @@
   {{ end }}
   <h2 class="!my-0 pb-1 font-bold !leading-none">{{ .Title }}</h2>
   <div class="event">{{ .Content }}</div>
-  <a class="absolute inset-0 text-[0]" href="{{ .Permalink }}">{{ .Title }}</a>
+  <a class="absolute inset-0 text-[0]" target="_blank" rel="noopener noreferrer" href="{{ .Params.link }}">{{ .Title }}</a>
 </section>
 {{ end }}
 
