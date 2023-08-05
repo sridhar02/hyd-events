@@ -1,4 +1,4 @@
-baseURL = "/'
+baseURL = "https://hyd-events.pages.dev'
 languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme ='paper'
