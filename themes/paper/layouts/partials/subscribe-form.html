@@ -23,31 +23,16 @@ document.getElementById('subscribe-form').addEventListener('submit', function(ev
     const messageDiv = document.getElementById('message');
 
     // Replace with your actual API endpoint
-    const apiEndpoint = ""
+    const apiEndpoint = "https://events.ksridhar.dev/subscribe"
 
     fetch(apiEndpoint, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            "x-requested-with":"XMLHttpRequest"
+            "x-requested-with":"XMLHttpRequest",
         },
         body: JSON.stringify({
             "email": emailInput.value,
-            "name":"The Subscriber",
-            "status": "enabled",
-            "lists": [
-                2
-            ],
-            "preconfirm_subscriptions": true,
-            "attribs": {
-                "city": "string",
-                "projects": 0,
-                "stack": {
-                "languages": [
-                    "string"
-                ]
-                }
-            }
         })
     })
     .then(response => {
