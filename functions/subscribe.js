@@ -3,6 +3,8 @@ export async function onRequest({ request, env }) {
 }
 
 async function submitHandler({ request, env }) {
+  console.log(env);
+
   const body = await request.formData();
 
   console.log(body);
