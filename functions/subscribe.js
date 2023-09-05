@@ -8,9 +8,9 @@ async function submitHandler({ request, env }) {
 
   if (request.method === "POST") {
     const body = await request.formData();
-    const body1 = await request.json(();
+    const body1 = await request.json();
 
-    console.log(body,body1);
+    console.log(body, body1);
 
     const { email } = Object.fromEntries(body);
 
