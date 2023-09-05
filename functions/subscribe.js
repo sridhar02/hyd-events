@@ -7,15 +7,13 @@ async function submitHandler({ request, env }) {
   console.log(env, url);
   try {
     if (request.method === "POST") {
-      // const body = await request.formData();
-      // console.log({ body });
       const body = await request.json();
       console.log({ body });
-      const { email } = Object.fromEntries(body);
-      console.log({ email });
+      // const { email } = Object.fromEntries(body);
+      console.log({ email: body.email });
 
       const reqBody = {
-        email: email,
+        email: body.email,
         status: "enabled",
         name: "The Subscriber",
         lists: [2],
