@@ -19,7 +19,7 @@ async function submitHandler({ request, env }) {
         lists: [2],
       };
 
-      return handleSubscriber({ body: reqBody });
+      return handleSubscriber(reqBody);
     }
     return new Response("Ok");
   } catch (error) {
