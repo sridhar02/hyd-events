@@ -3,22 +3,28 @@ export async function onRequest({ request, env }) {
 }
 
 async function submitHandler({ request, env }) {
-  console.log(env);
+  const url = new URL(request.url);
+  console.log(env, url);
 
-  const body = await request.formData();
+  if (request.method === "POST") {
+    const body = await request.formData();
+    const body1 = await request.json(();
 
-  console.log(body);
+    console.log(body,body1);
 
-  const { email } = Object.fromEntries(body);
+    const { email } = Object.fromEntries(body);
 
-  const reqBody = {
-    email: email,
-    status: "enabled",
-    name: "The Subscriber",
-    lists: [2],
-  };
+    const reqBody = {
+      email: email,
+      status: "enabled",
+      name: "The Subscriber",
+      lists: [2],
+    };
 
-  return handleSubscriber({ body: reqBody });
+    return handleSubscriber({ body: reqBody });
+    // Simple API key auth
+  }
+  return new Response("Ok");
 }
 
 async function handleSubscriber(body) {
