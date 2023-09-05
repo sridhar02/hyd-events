@@ -1,30 +1,33 @@
-export async function onRequest({ request, env }) {
-  return await submitHandler({ request, env });
+export function onRequest({ request, env }) {
+  return submitHandler({ request, env });
 }
 
 async function submitHandler({ request, env }) {
   const url = new URL(request.url);
   console.log(env, url);
+  try {
+    if (request.method === "POST") {
+      const body = await request.formData();
+      console.log({ body });
+      const body1 = await request.json();
+      console.log({ body1 });
+      const { email } = Object.fromEntries(body);
+      console.log({ email });
 
-  if (request.method === "POST") {
-    const body = await request.formData();
-    const body1 = await request.json();
+      const reqBody = {
+        email: email,
+        status: "enabled",
+        name: "The Subscriber",
+        lists: [2],
+      };
 
-    console.log(body, body1);
-
-    const { email } = Object.fromEntries(body);
-
-    const reqBody = {
-      email: email,
-      status: "enabled",
-      name: "The Subscriber",
-      lists: [2],
-    };
-
-    return handleSubscriber({ body: reqBody });
-    // Simple API key auth
+      return handleSubscriber({ body: reqBody });
+    }
+    return new Response("Ok");
+  } catch (error) {
+    console.log(error);
+    return new Response("failed", { status: 500 });
   }
-  return new Response("Ok");
 }
 
 async function handleSubscriber(body) {
