@@ -7,10 +7,10 @@ async function submitHandler({ request, env }) {
   console.log(env, url);
   try {
     if (request.method === "POST") {
-      const body = await request.formData();
+      // const body = await request.formData();
+      // console.log({ body });
+      const body = await request.json();
       console.log({ body });
-      const body1 = await request.json();
-      console.log({ body1 });
       const { email } = Object.fromEntries(body);
       console.log({ email });
 
