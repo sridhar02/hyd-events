@@ -11,7 +11,7 @@ async function submitHandler({ request, env }) {
         email: body.email,
         status: "enabled",
         name: "The Subscriber",
-        lists: [2],
+        lists: [3],
       };
 
       return handleSubscriber(reqBody);
