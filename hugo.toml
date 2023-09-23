@@ -1,21 +1,18 @@
-baseURL = 'https://hyd-events.pages.dev'
+baseURL = 'https://events.ksridhar.dev'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
-theme ='paper'
+title = 'Hyderabad Tech Events'
+theme = 'paper'
 paginate = 10
-googleAnalytics = 'G-727NLMKDW2'
 
 [params]
-  # color style
-  color = 'linen'                           # linen, wheat, gray, light
-  formAPI='http://localhost:8080/http://localhost:9000/api/subscribers'
-  googleAnalytics = 'G-XXXXXXXX'
+# color style
+color = 'linen'                  # linen, wheat, gray, light
+googleAnalytics = 'G-727NLMKDW2'
 
 
-
-  # misc
-  disableHLJS = true                        # disable highlight.js
-  monoDarkIcon = true                       # show monochrome dark mode icon
-  gravatarCdn = 'GRAVATAR_CDN_LINK'         # e.g. 'https://cdn.v2ex.com/gravatar/'
-  graphCommentId = "YOUR_GRAPH_COMMENT_ID"  # use graph comment (disqus alternative)
-  math = true                               # enable KaTex math typesetting globally
+# misc
+disableHLJS = true                       # disable highlight.js
+monoDarkIcon = true                      # show monochrome dark mode icon
+gravatarCdn = 'GRAVATAR_CDN_LINK'        # e.g. 'https://cdn.v2ex.com/gravatar/'
+graphCommentId = "YOUR_GRAPH_COMMENT_ID" # use graph comment (disqus alternative)
+math = true                              # enable KaTex math typesetting globally
