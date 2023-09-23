@@ -3,6 +3,7 @@ languageCode = 'en-us'
 title = 'My New Hugo Site'
 theme ='paper'
 paginate = 10
+googleAnalytics = 'G-727NLMKDW2'
 
 [params]
   # color style
